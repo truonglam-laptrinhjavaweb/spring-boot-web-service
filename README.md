@@ -3,11 +3,13 @@ Trong nội dung này, Laptrinhjavaweb hướng dẫn các bạn xây dựng jav
 
 Chi tiết website: https://laptrinhjavaweb.com/hoc-spring-boot-viet-api-web-service-185
 
-## Hỏi đáp, report bug, gợi ý nội dung
+## Group facebook hỏi đáp, thảo luận
 Các bạn tham gia nhóm Facebook để cùng trao đổi nhé: https://www.facebook.com/groups/laptrinhjavaweb
 
 ## Các kênh nhận thông báo nhanh nhất, mới nhất
-- Facebook: https://www.facebook.com/laptrinhjavaweb
+- Fanpage: https://www.facebook.com/laptrinhjavaweb
+
+- Facebook: https://www.facebook.com/lamrangho
 
 - Youtube: https://www.youtube.com/laptrinhjavaweb
 
