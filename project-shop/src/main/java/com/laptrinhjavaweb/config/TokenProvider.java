@@ -2,8 +2,6 @@ package com.laptrinhjavaweb.config;
 
 import com.laptrinhjavaweb.constant.SystemConstant;
 import io.jsonwebtoken.*;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
-import java.security.Key;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -54,7 +51,7 @@ public class TokenProvider implements Serializable {
         return Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim(SystemConstant.AUTHORITIES_KEY, authorities)
-                .signWith(SignatureAlgorithm.HS256, getSignInKey())
+                .signWith(SignatureAlgorithm.HS256, SystemConstant.SIGNING_KEY)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + SystemConstant.ACCESS_TOKEN_VALIDITY_SECONDS))
                 .compact();
@@ -83,8 +80,4 @@ public class TokenProvider implements Serializable {
         return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);
     }
 
-    private Key getSignInKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SystemConstant.SIGNING_KEY);
-        return Keys.hmacShaKeyFor(keyBytes);
-    }
 }

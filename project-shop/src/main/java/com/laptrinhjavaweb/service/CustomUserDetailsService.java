@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.service;
 
+import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.dto.MyUser;
 import com.laptrinhjavaweb.entity.RoleEntity;
 import com.laptrinhjavaweb.entity.UserEntity;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service(value = "userCustomService")
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired

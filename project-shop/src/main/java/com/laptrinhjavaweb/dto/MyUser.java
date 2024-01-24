@@ -1,9 +1,9 @@
 package com.laptrinhjavaweb.dto;
 
+import java.util.Collection;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
-
-import java.util.Collection;
 
 public class MyUser extends User {
 	
